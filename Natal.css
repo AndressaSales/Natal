@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Borel&family=Dancing+Script&family=Edu+SA+Beginner&family=Fasthand&family=Pacifico&family=Rubik+Doodle+Shadow&family=Rubik+Wet+Paint&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik Doodle Shadow;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgb(6, 11, 164), rgba(102, 60, 254, 0.899));
+}
+.cont{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.cont::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: url("./img/tree.png");
+}
+.cont .circu{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: #ffffffe7;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 0 20px gray,
+    0 0px 40px rgb(26, 23, 23),
+    0 0px 60px rgb(77, 74, 74),
+    0 0 80px white;
+}
+.cont .circu::before{
+    content: '';
+    position: absolute;
+    inset: -220px;
+    background: url("./img/santa.png");
+    background-size: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: noel 4.5s infinite linear;
+}
+@keyframes noel{
+    0%{
+        transform: translateY(-25px);
+    }
+    100%{
+        transform: translateY(25px);
+    }
+}
+.cont .circu::after{
+    content: "Feliz Natal";
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 10px greenyellow,
+    0 0 30px greenyellow,
+    0 0 50px greenyellow;
+    inset: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 4rem;
+}
+.cont .neve{
+    display: flex;
+}
+.cont .neve span{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    box-shadow: -100 20px 5px #FFF,
+    -100 20px 10px #FFF;
+    margin: 0 1vw;
+    animation: neve calc(75s / var(--i)) linear infinite;
+}
+@keyframes neve{
+    0%{
+        transform: translateY(-10vh);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+button{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+@media only screen and (max-width: 700px){
+    .cont .circu{
+        width: 200px;
+        height: 200px;
+    }
+    .cont .circu::before{
+        background-size: 300px;
+    }
+    .cont .circu::after{
+        font-size: 3rem;
+    }
+}
